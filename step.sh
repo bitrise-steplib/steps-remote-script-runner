@@ -14,18 +14,14 @@ fi
 
 ######################
 
-res=$(curl "$DOWNLOAD_SCRIPT_URL")
+echo
+echo "--Saving script to file--"
+echo
+
+curl -o remotescript.sh "$DOWNLOAD_SCRIPT_URL"
 
 echo
-echo " --- Result ---"
-echo "$res"
-echo " --------------"
+echo "--Executing script--"
+echo
 
-if [[ ! $res ]]; then
-	echo
-    echo "No useful result. Terminating..."
-    echo
-    exit 1
-fi
-
-bash -c "$res"
+bash ./remotescript.sh
