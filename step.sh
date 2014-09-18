@@ -18,8 +18,9 @@ echo "--- Executing script: ${DOWNLOAD_SCRIPT_URL}"
 echo
 
 curl -sSL "${DOWNLOAD_SCRIPT_URL}" | bash
-if [ $? -ne 0 ] ; then
-	echo "--- [!] The script returned with a non success code!"
+res_code=$?
+if [ ${res_code} -ne 0 ] ; then
+	echo "--- [!] The script returned with an error code: ${res_code}"
 	echo "---------------------------------------------------"
 	exit 1
 fi
