@@ -1,7 +1,8 @@
 steps-remote-script-runner
 ==========================
 
-Run a remote script, ex: a Github Gist by providing a raw (!) url (which returns a simple text, non html response).
+Step that downloads the content of the input url and runs it as a bash script.
+For example you can provide a Gist raw url.
 
 # Input Environment Variables
 - DOWNLOAD_SCRIPT_URL
