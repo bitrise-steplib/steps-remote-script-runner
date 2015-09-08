@@ -1,12 +1,12 @@
 #!/bin/bash
 
 echo
-echo "DOWNLOAD_SCRIPT_URL: ${DOWNLOAD_SCRIPT_URL}"
+echo "script_url: ${script_url}"
 
 # Required input validation
-if [[ "${DOWNLOAD_SCRIPT_URL}" == "" ]]; then
+if [[ "${script_url}" == "" ]]; then
 	echo
-	echo "No DOWNLOAD_SCRIPT_URL provided as environment variable. Terminating..."
+	echo "No script_url provided as environment variable. Terminating..."
 	echo
 	exit 1
 fi
@@ -14,10 +14,10 @@ fi
 
 echo
 echo "---------------------------------------------------"
-echo "--- Executing script: ${DOWNLOAD_SCRIPT_URL}"
+echo "--- Executing script: ${script_url}"
 echo
 
-curl -sSL "${DOWNLOAD_SCRIPT_URL}" | bash
+curl -sSL "${script_url}" | bash
 res_code=$?
 if [ ${res_code} -ne 0 ] ; then
 	echo "--- [!] The script returned with an error code: ${res_code}"
