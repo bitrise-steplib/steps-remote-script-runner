@@ -27,8 +27,5 @@ inputs:
       title: "Script URL"
       description: |
         Bash Script URL which returns a *text* response (not an HTML one!)
-      summary: ""
-      is_expand: true
       is_required: true
-      is_dont_change_value: false
 outputs: []
